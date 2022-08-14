@@ -2,6 +2,30 @@
  * @OnlyCurrentDoc
  */
 
+function populateSheet() {
+  const startTime = new Date().getTime()
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet()
+  Logger.log("Sheet: " + sheet.getName())
+
+  let currRow = 3
+  while (getCategoryOrCoord(currRow)) {
+    const column = getCategoryOrCoord(currRow)
+    if (column == 17) {
+      getNearest(currRow)
+    } else if (column == 15) {
+      getTravelTime(currRow)
+    } else {
+      Logger.log("Empty row. Exiting...")
+    }
+    currRow++
+  }
+
+  toggleRows()
+
+  const endTime = new Date().getTime()
+  Logger.log("Execution time: " + (endTime-startTime) + "ms")
+}
+
 function rankAllScores() {
   const spreadsheet = SpreadsheetApp.getActive();
   const sheets = spreadsheet.getSheets();
@@ -31,30 +55,6 @@ function rankAllScores() {
   })
 
   sheet.getRange(2, 1, fillArray.length, fillArray[0].length).setValues(fillArray)
-}
-
-function populateSheet() {
-  const startTime = new Date().getTime()
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet()
-  Logger.log("Sheet: " + sheet.getName())
-
-  let currRow = 3
-  while (getCategoryOrCoord(currRow)) {
-    const column = getCategoryOrCoord(currRow)
-    if (column == 17) {
-      getNearest(currRow)
-    } else if (column == 15) {
-      getTravelTime(currRow)
-    } else {
-      Logger.log("Empty row. Exiting...")
-    }
-    currRow++
-  }
-
-  toggleRows()
-
-  const endTime = new Date().getTime()
-  Logger.log("Execution time: " + (endTime-startTime) + "ms")
 }
 
 function toggleRows() {
