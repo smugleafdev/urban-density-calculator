@@ -21,5 +21,5 @@ This uses the OpenRouteService API. The [ORS standard plan](https://openrouteser
 
 ORS utilizes OpenStreetMap, not Google Maps. If you see missing or incorrect data, feel free to make an OpenStreetMap account and update it yourself! It may take up to two weeks for ORS to see the OSM changes.
 
-### Misc
+### More Info
 The script and the sheet are set up to find the nearest POI for each row with a set POI category. If it finds one, it fills in the coordinates and then finds both driving and cycling directions between your set address and the POI's address. This includes duration in minutes, miles to travel, and for cycling it includes total elevation changes. All of these are color coded based on my arbitrary values. Feel free to tweak any of these to your own liking, but be warned a lot of the script is hardcoded to specific columns and may take a little bit of scripting knowledge to work with your changes.
