@@ -23,3 +23,8 @@ ORS utilizes OpenStreetMap, not Google Maps. If you see missing or incorrect dat
 
 ### More Info
 The script and the sheet are set up to find the nearest POI for each row with a set POI category. If it finds one, it fills in the coordinates and then finds both driving and cycling directions between your set address and the POI's address. This includes duration in minutes, miles to travel, and for cycling it includes total elevation changes. All of these are color coded based on my arbitrary values. Feel free to tweak any of these to your own liking, but be warned a lot of the script is hardcoded to specific columns and may take a little bit of scripting knowledge to work with your changes.
+
+### Future Enhancements
+The POI finding and directions methods (populateSheet, getNearest, getTravelTime) are not optimized for Google Apps Script, nor are they set up to avoid hitting ORS API limits. In fact, the inefficiencies in reading and writing values to the sheet are part of why it's slow enough to often not hit API limits. The other functions (rankAllScores, toggleRows, clearData) are fairly optimized.
+
+The POI search will always find the nearest single POI of a given category. If I were more ambitious, an enhancement would be to count each usage of every category and on the second and third call, find the second and third closest POI.
