@@ -1,6 +1,8 @@
 # urban-density-calculator
 The Urban Density Calculator finds nearby points of interest and travel times. More specifically, this is a tool using Google Sheets and OpenRouteService to rate a location based on how many unique types of POIs are within 2km. This is useful for house shopping, comparing your friends' neighborhoods, or just generally judging a location based on how much of a suburban hell it is.
 
+[!(calculating)](https://user-images.githubusercontent.com/20119855/186452927-71477691-38d6-46a6-8a8e-cf2419e8966e.mp4)
+
 ### How to use:
 You can use this sheet to find the nearest POI of a given category, and then calculate the distance and travel time for it or any arbitrary location. You can make a new sheet for each location you want to run, and then compare their POI count and median distance in the "Rankings" sheet.
 
@@ -15,6 +17,10 @@ You can use this sheet to find the nearest POI of a given category, and then cal
 See the "Example" sheet for a complete example (minus my API key).
 
 You can also add your own specific targets. Leave the category column blank and paste in the coordinates of a location you want to get direction data from. The "Example" sheet has four of these.
+
+![finished](https://user-images.githubusercontent.com/20119855/186457075-12116b4a-9884-42c6-bed0-16d3d271a637.png)
+![rankings](https://user-images.githubusercontent.com/20119855/186453006-736f07e6-052c-4556-ad66-d9e43e927bf3.png)
+
 
 ### APIs
 This uses the OpenRouteService API. The [ORS standard plan](https://openrouteservice.org/plans/) has API limits. Direction calls are limited to 40/min and 2000/day. POI search calls are limited to 60/min and a mere 500/day. Both the minute and daily limit may cause issues with the script.
