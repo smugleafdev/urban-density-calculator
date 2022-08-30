@@ -1,7 +1,7 @@
 # urban-density-calculator
 The Urban Density Calculator finds nearby points of interest and travel times. More specifically, this is a tool using Google Sheets and OpenRouteService to rate a location based on how many unique types of POIs are within 2km. This is useful for house shopping, comparing your friends' neighborhoods, or just generally judging a location based on how much of a suburban hell it is.
 
-[!(calculating)](https://user-images.githubusercontent.com/20119855/186452927-71477691-38d6-46a6-8a8e-cf2419e8966e.mp4)
+![calculating](https://user-images.githubusercontent.com/20119855/187333561-114cfd17-a3eb-47f4-9b5d-43da83b99909.gif)
 
 ### How to use:
 You can use this sheet to find the nearest POI of a given category, and then calculate the distance and travel time for it or any arbitrary location. You can make a new sheet for each location you want to run, and then compare their POI count and median distance in the "Rankings" sheet.
